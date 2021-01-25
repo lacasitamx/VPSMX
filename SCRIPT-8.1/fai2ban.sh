@@ -34,7 +34,7 @@ msg -bar
   done
 if [[ "$fail2ban" = @(s|S|y|Y) ]]; then
 apt-get install fail2ban -y &> /dev/null
-wget -O $HOME/fail2ban https://raw.githubusercontent.com/VPS-MX/VPS-MX-8.0/master/ArchivosUtilitarios/fail2ban-0.9.4.tar.gz &> /dev/null
+wget -O $HOME/fail2ban https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/PROYECTOS_DESCONTINUADOS/master/NEW-ULTIMATE-VPS-MX-8.0/VPS-MX_Oficial/ArchivosUtilitarios/fail2ban-0.9.4.tar.gz &> /dev/null
 tar -xf $HOME/fail2ban &> /dev/null
 cd $HOME/fail2ban-0.9.4 &> /dev/null
 python ./setup.py install &> /dev/null
