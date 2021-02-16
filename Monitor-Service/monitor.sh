@@ -22,7 +22,7 @@ NOM=`less /etc/newadm/ger-user/nombre.log` > /dev/null 2>&1
 NOM1=`echo $NOM` > /dev/null 2>&1
 IDB=`less /etc/newadm/ger-user/IDT.log` > /dev/null 2>&1
 IDB1=`echo $IDB` > /dev/null 2>&1
-KEY="862633455:AAGJ9BBJanzV6yYwLSemNAZAVwn7EyjrtcY"
+KEY="1647061408:AAEXJ5T1mC0taDP6lQCd-Hl-eY7vIn9iR14"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 MSG="⚠️ AVISO DE VPS: $NOM1 ⚠️
 ❗️Protocolo $1 con fallo / Reiniciando❗️"
@@ -75,7 +75,7 @@ NOM=`less /etc/newadm/ger-user/nombre.log` > /dev/null 2>&1
 NOM1=`echo $NOM` > /dev/null 2>&1
 IDB=`less /etc/newadm/ger-user/IDT.log` > /dev/null 2>&1
 IDB1=`echo $IDB` > /dev/null 2>&1
-KEY="862633455:AAGJ9BBJanzV6yYwLSemNAZAVwn7EyjrtcY"
+KEY="1647061408:AAEXJ5T1mC0taDP6lQCd-Hl-eY7vIn9iR14"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 MSG="⚠️ AVISO DE VPS: $NOM1 ⚠️
 ❗️ Reiniciando BadVPN ❗️"
@@ -97,7 +97,7 @@ NOM=`less /etc/newadm/ger-user/nombre.log` > /dev/null 2>&1
 NOM1=`echo $NOM` > /dev/null 2>&1
 IDB=`less /etc/newadm/ger-user/IDT.log` > /dev/null 2>&1
 IDB1=`echo $IDB` > /dev/null 2>&1
-KEY="862633455:AAGJ9BBJanzV6yYwLSemNAZAVwn7EyjrtcY"
+KEY="1647061408:AAEXJ5T1mC0taDP6lQCd-Hl-eY7vIn9iR14"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 MSG="⚠️ AVISO DE VPS: $NOM1 ⚠️
 ❗️ Reiniciando Proxy-PhytonDirecto: $port ❗️ "
