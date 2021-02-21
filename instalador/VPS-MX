@@ -199,7 +199,7 @@ function_verify () {
   ### INTALAR VERCION DE SCRIPT
   v1=$(curl -sSL "https://www.dropbox.com/s/xi3kfu39eawuvoc/Vercion")
   echo "$v1" > /etc/versin_script
-  }
+#  }
 }
 funcao_idioma () {
 msg -bar2
