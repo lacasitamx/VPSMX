@@ -191,15 +191,11 @@ MIP2=$(wget -qO- ifconfig.me)
 }  
 function_verify () {
  # permited=$(curl -sSL "https://www.dropbox.com/s/54kjsi13x36fhjw/Control-IP")
-  #[[ $(echo $permited|grep "${IP}") = "" ]] && {
-  #echo -e "\n\n\n\033[1;95m======================================================\n ¡ESTA KEY NO CONCUERDA CON EL INSTALADOR!,CONATACTE A @Kalix1\n======================================================\n"
-#  [[ -d /etc/newadm ]] && rm -rf /etc/newadm
-#  exit 1
-#  } || {
+  #
   ### INTALAR VERCION DE SCRIPT
   v1=$(curl -sSL "https://www.dropbox.com/s/xi3kfu39eawuvoc/Vercion")
   echo "$v1" > /etc/versin_script
-#  }
+#  
 }
 funcao_idioma () {
 msg -bar2
