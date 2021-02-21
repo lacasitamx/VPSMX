@@ -340,18 +340,18 @@ msg -bar2
 [[ $1 = "" ]] && funcao_idioma || {
 [[ ${#1} -gt 2 ]] && funcao_idioma || id="$1"
  }
-kalix83=("ADMbot.sh" "C-SSR.sh" "Crear-Demo.sh" "PDirect.py" "PGet.py" "POpen.py" "PPriv.py" "PPub.py" "Shadowsocks-R.sh" "Shadowsocks-libev.sh" "Unlock-Pass-VULTR.sh" "apacheon.sh" "blockBT.sh" "budp.sh" "dns-netflix.sh" "dropbear.sh" "fai2ban.sh" "gestor.sh" "menu" "message.txt" "openvpn.sh" "paysnd.sh" "ports.sh" "shadowsocks.sh" "sockspy.sh" "speed.sh" "speedtest.py" "squid.sh" "squidpass.sh" "ssl.sh" "tcp.sh" "ultrahost" "usercodes" "utils.sh" "v2ray.sh")
+kalix=("ADMbot.sh" "C-SSR.sh" "Crear-Demo.sh" "PDirect.py" "PGet.py" "POpen.py" "PPriv.py" "PPub.py" "Shadowsocks-R.sh" "Shadowsocks-libev.sh" "Unlock-Pass-VULTR.sh" "apacheon.sh" "blockBT.sh" "budp.sh" "dns-netflix.sh" "dropbear.sh" "fai2ban.sh" "gestor.sh" "menu" "message.txt" "openvpn.sh" "paysnd.sh" "ports.sh" "shadowsocks.sh" "sockspy.sh" "speed.sh" "speedtest.py" "squid.sh" "squidpass.sh" "ssl.sh" "tcp.sh" "ultrahost" "usercodes" "utils.sh" "v2ray.sh")
 sleep 1s
 function_verify
 updatedb
    [[ ! -d ${SCPinstal} ]] && mkdir ${SCPinstal}
    pontos="*"
-for arqx in ${kalix83[@]}; do
+for arqx in ${kalix[@]}; do
    stopping="$(source trans -b es:${id} "Descargando Recursos"|sed -e 's/[^a-z -]//ig')"
    msg -verm "${stopping}${pontos}"
    tput cuu1 && tput dl1
    pontos+="*"
-        wget -O ${SCPinstal} $repox/${arqx} &>/dev/null && verificar_arq "${arqx}"
+        wget -c -P ${SCPinstal} $repox/${arqx} &>/dev/null && verificar_arq "${arqx}"
 done
    sleep 1s
    msg -bar2
@@ -361,12 +361,13 @@ done
    mv -f /etc/bash.bashrc.2 /etc/bash.bashrc
    echo "${SCPdir}/menu" > /usr/bin/menu && chmod +x /usr/bin/menu
    echo "${SCPdir}/menu" > /usr/bin/adm && chmod +x /usr/bin/adm
-   echo "$Key" > ${SCPdir}/key.txt
-   cd /etc/newadm
-   wget https://www.dropbox.com/s/k92gddhdnla47nl/pytransform.tar >/dev/null 2>&1
-   tar -xf pytransform.tar > /dev/null 2>&1 
-   rm -rf pytransform.tar > /dev/null 2>&1
-   cd
+   Key="VpsMx/Kalix/v8.3/1K45*456*Fr33"
+echo "$Key" > ${SCPdir}/key.txt
+   #cd /etc/newadm
+  # wget https://www.dropbox.com/s/k92gddhdnla47nl/pytransform.tar >/dev/null 2>&1
+  # tar -xf pytransform.tar > /dev/null 2>&1 
+   #rm -rf pytransform.tar > /dev/null 2>&1
+   #cd
    [[ -d ${SCPinstal} ]] && rm -rf ${SCPinstal}   
    [[ ${#id} -gt 2 ]] && echo "es" > ${SCPidioma} || echo "${id}" > ${SCPidioma}
    echo -e "${cor[2]}         DESEAS INSTALAR NOTI-BOT?(Default n)"
