@@ -939,7 +939,7 @@ case ${selection} in
 9)atualiza_fun;;
 10)remove_script;;
 11)creditoss ;;
-0)cd $..HOME && exit 0;;
+0)cd $HOME && exit 0;;
 esac
 msg -ne "$(fun_trans "Enter Para Continuar")" && read enter
 ${SCPdir}/menu 
