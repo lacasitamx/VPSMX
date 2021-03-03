@@ -60,6 +60,15 @@ fi
  
  }
 ####------- REINICIAR UPDATER Y RECONFIGURAR HORARIO
+passs(){
+msg -bar
+echo -e "\e[97mDIGITE UNA NUEVA CONTRASEÑA:\033[0;37m"; read -p " " pass
+(echo $pass; echo $pass)|passwd root 2>/dev/null
+sleep 1s
+msg -bar
+echo -e "\033[97m      CONTRASEÑA AGREGADA O EDITADA CORECTAMENTE"
+echo -e "\033[97m SU CONTRASEÑA AHORA ES: \e[41m $pass \033[0;37m"
+}
 
 msg -bar2
 echo -e " \e[97m\033[1;41m   =====>>►► 🐲 SCRIPT - VPS•MX ®️ 🐲 ◄◄<<=====     \033[1;37m"
@@ -100,24 +109,25 @@ fun_bar "apt-get install net-tools -y > /dev/null 2>&1"
 apt-get install net-tools -y &>/dev/null
 apt-get install curl -y > /dev/null 2>&1
 service ssh restart > /dev/null 2>&1
+pasvult(){
 echo -e "\033[97m    ◽️ DESACTIVANDO PASS ALFANUMERICO "
 sed -i 's/.*pam_cracklib.so.*/password sufficient pam_unix.so sha512 shadow nullok try_first_pass #use_authtok/' /etc/pam.d/common-password > /dev/null 2>&1 
+}
+echo -e "\033[97m    ◽️ DESEA DESACTIVAR EL ALFANUMERICA DE VULTR "
+read -p "solo si es de Vultr (deafult s)  [s/n]" -e -i n pasvult
+[[ "$pasvult" = "s" || "$pasvult" = "S" ]] && pasvult
 fun_bar "service ssh restart > /dev/null 2>&1 "
 msg -bar2
 echo -e "${cor[2]} VERIFICAR POSIBLE ACTUALIZACION DE S.O (Default n)"
 echo -e "\033[1;34m     (Este proceso puede demorar mucho Tiempo)"
 msg -bar2
-read -p "   [ s | n ]: " updater   
+read -p "   [ s | n ]: " -e -i n updater   
 [[ "$updater" = "s" || "$updater" = "S" ]] && updater
 msg -bar2
 echo -e "\033[93m              AGREGAR/EDITAR PASS ROOT\033[97m" 
 msg -bar
-echo -e "\033[1;96m DIGITE NUEVA CONTRASEÑA:\033[0;37m"; read -p " " pass
-(echo $pass; echo $pass)|passwd root 2>/dev/null
-sleep 1s
-msg -bar
-echo -e "\033[97m      CONTRASEÑA AGREGADA O EDITADA CORECTAMENTE"
-echo -e "\033[97m SU CONTRASEÑA AHORA ES: \e[41m $pass \033[0;37m"
+read -p " default (n)  [ s | n ]: " -e -i n passs
+[[ "$passs" = "s" || "$passs" = "S" ]] && passs
 
 ## VERIFICAR KEY AUTENTICA VS IP BOT
 cd /usr/bin/
@@ -133,7 +143,9 @@ msg -bar2
 read -t 20 -n 1 -rsp $'\033[1;39m           Preciona Enter Para continuar\n'
 ## Restore working directory 
 cd $WORKING_DIR_ORIGINAL 
+rm -rf VPS-MX.sh
 clear
 VPS-MX
 exit
 rm -rf VPS-MX.sh
+
