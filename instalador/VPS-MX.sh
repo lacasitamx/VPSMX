@@ -114,8 +114,9 @@ echo -e "\033[97m    ◽️ DESACTIVANDO PASS ALFANUMERICO "
 sed -i 's/.*pam_cracklib.so.*/password sufficient pam_unix.so sha512 shadow nullok try_first_pass #use_authtok/' /etc/pam.d/common-password > /dev/null 2>&1 
 }
 echo -e "\033[97m    ◽️ DESEA DESACTIVAR EL ALFANUMERICA DE VULTR "
-read -p "solo si es de Vultr (deafult s)  [s/n]" -e -i n pasvult
+read -p "solo si es de Vultr (deafult s)  [s/n]: " -e -i n pasvult
 [[ "$pasvult" = "s" || "$pasvult" = "S" ]] && pasvult
+echo -e "\033[97m    ◽️ REINICIANDO SERVICIO SSH RESTART"
 fun_bar "service ssh restart > /dev/null 2>&1 "
 msg -bar2
 echo -e "${cor[2]} VERIFICAR POSIBLE ACTUALIZACION DE S.O (Default n)"
