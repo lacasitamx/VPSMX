@@ -1,9 +1,4 @@
 #!/bin/bash
-sudo apt-get update  &>/dev/null
-killall apt apt-get
-dpkg --configure -a
-apt-get install software-properties-common -y
-apt-add-repository universe -y
 rm -rf /etc/localtime &>/dev/null
 ln -s /usr/share/zoneinfo/America/Mexico_City /etc/localtime &>/dev/null
 rm $(pwd)/$0 &> /dev/null

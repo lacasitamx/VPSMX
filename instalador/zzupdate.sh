@@ -15,7 +15,8 @@ AZUL='\e[34m' && MAGENTA='\e[35m' && MAG='\033[1;36m' &&NEGRITO='\e[1m' && SEMCO
  esac
 }
 rm -rf /usr/bin/VPS-MX
-rm -rf /VPS-Mx
+rm -rf VPS-MX
+rm -rf VPS-MX.sh
 ## Script name
 SCRIPT_NAME=vpsmxup
 
