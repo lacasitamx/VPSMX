@@ -1,0 +1,3 @@
+#!/bin/bash
+#Soporte Remoto (SPR)
+echo "BIENVENIDO A SOPORTE ONLINE FIXEADOR DE BASE DAÑADA v4"
