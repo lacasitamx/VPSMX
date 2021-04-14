@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 sh_ver="1.3.1"
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
 Info="${Green_font_prefix}[Informacion]${Font_color_suffix}"
@@ -22,6 +23,7 @@ AZUL='\e[34m' && MAGENTA='\e[35m' && MAG='\033[1;36m' &&NEGRITO='\e[1m' && SEMCO
 
 
 startbbr(){
+clear
 	remove_all
 	echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
 	echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
@@ -32,6 +34,7 @@ startbbr(){
 
 #Habilitar BBRplus
 startbbrplus(){
+clear
 	remove_all
 	echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
 	echo "net.ipv4.tcp_congestion_control=bbrplus" >> /etc/sysctl.conf
@@ -86,6 +89,7 @@ remove_all(){
 }
 
 start_menu(){
+clear
 msg -bar
 msg -ama "	INSTALADOR BBR-PLUS"
 msg -bar
