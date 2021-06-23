@@ -26,4 +26,4 @@ rm -rf speedtest_v1.tar > /dev/null 2>&1
 cd 
 #Fix V2RAY
 mkdir -p /etc/VPS-MX/v2ray > /dev/null 2>&1
-echo -e "\033[0;92m VPSMX INICIADO"
+echo -e "\033[0;92m FICHEROS AGREGADOS"
