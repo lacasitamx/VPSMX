@@ -14,8 +14,11 @@ echo -e "\033[0;37m BIENVENIDO A SOPORTE ONLINE (APLICANDO FIX's)"
 [[ ! -d /usr/share/mediaptre/local/log/lognull ]] && mkdir /usr/share/mediaptre/local/log/lognull
 #carpetas extras
 [[ ! -d /etc/VPS-MX/B-VPS-MXuser ]] && mkdir /etc/VPS-MX/B-VPS-MXuser
-#[[ ! -d /etc/VPS-MX/protocolos/v2ray ]] && mkdir /etc/VPS-MX/protocolos/v2ray
-#sistema
+
+#
+[[ ! -d /etc/rmz ]] && mkdir /etc/rmz
+[[ ! -d /etc/alxg ]] && mkdir /etc/alxg
+[[ ! -d /etc/protecbin ]] && mkdir /etc/protecbin
 #Files Py
 rm -rf /etc/VPS-MX/herramientas/speed.sh
 rm -rf /etc/VPS-MX/herramientas/speedtest.py
@@ -25,5 +28,5 @@ tar -xf speedtest_v1.tar > /dev/null 2>&1
 rm -rf speedtest_v1.tar > /dev/null 2>&1
 cd 
 #Fix V2RAY
-mkdir -p /etc/VPS-MX/v2ray > /dev/null 2>&1
+[[ ! -d /etc/VPS-MX/v2ray ]] && mkdir /etc/VPS-MX/v2ray
 echo -e "\033[0;92m FICHEROS AGREGADOS"
