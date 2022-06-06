@@ -8,8 +8,7 @@ Info de Instalador y ficheros del Scrip VPS-MX
 # CAMBIOS
 # CAMBIO DE VERSION Y BARRAS {'-'} 8.1 -8.2
 
-# DESARROLLADO POR 
-@kalix1
+# Mod By kalix1
 # Créditos : @kalix1
 # 
 # Grupo y canal
