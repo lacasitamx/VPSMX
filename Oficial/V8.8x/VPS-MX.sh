@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 echo "======================================="
-echo -e "\e[1;91m ESTE INSTALADOR QUEDÓ FUERA DE SERVICIO,EMOS ECHO CAMBIADO DE INSTALADOR,HABLE CON EL ADMIN SOBRE ESTE CAMBIO....."
+echo -e "\e[1;91m ESTE INSTALADOR QUEDÓ FUERA DE SERVICIO,EMOS ECHO CAMBIO DE INSTALADOR,HABLE CON EL ADMIN SOBRE ESTE CAMBIO....."
 echo "======================================="
 
 exit
